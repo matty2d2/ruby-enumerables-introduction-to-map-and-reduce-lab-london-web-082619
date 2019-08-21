@@ -8,7 +8,11 @@ def map_to_negativize(source_array)
 end
 ###################################################
 def map_to_no_change(source_array)
-  new_Array = source_array
+  new_Array = []
+  source_array.each do |x|
+    new_Array.push(x)
+  end
+  new_Array
 end
 ###################################################
 def map_to_double(source_array)
@@ -28,17 +32,17 @@ def map_to_square(source_array)
 end
 ###################################################
 def reduce_to_total(source_array, starting_point = 0)
-  total = starting_point
+  i = starting_point
   source_array.each do |x|
-    total = total + x
+    i = i + x
   end
-  total
+  i
 end
 ###################################################
-def reduce_to_all_true(source_array)
-   i = 0 
-  while i <source_array.length do 
-    if (!source_array[i])
+def reduce_to_all_true(source_array, starting_point = 0)
+  i = starting_point
+  source_array.each do |x| 
+    if (!x)
       return false
     end
     i += 1
@@ -46,10 +50,10 @@ def reduce_to_all_true(source_array)
   return true
 end
 ###################################################
-def reduce_to_any_true(source_array)
-   i = 0 
-  while i <source_array.length do 
-    if (source_array[i])
+def reduce_to_any_true(source_array, starting_point = 0)
+  i = starting_point 
+  source_array.each do |x| 
+    if (x)
       return true
     end
     i += 1
@@ -57,3 +61,9 @@ def reduce_to_any_true(source_array)
   return false
 end
 ###################################################
+
+
+
+
+
+
